@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star icon</title>
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0 auto; 
+    }
+
+    .wrapper {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background: #000;
+    }
+
+    a {
+      position: absolute;
+      display: block;
+      margin: auto;
+      top: 50%;
+      right: 50%;
+      transform: translate(50%, -50%);
+      text-decoration: none;
+      color: white;
+      width: 150px;
+      height: 150px;
+    }
+
+    .star-dashes {
+      opacity: 0;
+      transform-origin: center;
+      transform: scale(.5);
+    }
+
+    .active .main-star {
+      fill: #f9f706;
+    }
+
+    .active .star-dashes {
+      animation: dashes 1.5s forwards;
+    }
+
+    @keyframes dashes {
+      50% {
+        opacity: 1;
+        stroke: #f9f706;
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <div class="wrapper">
+    <a href="#" class="contain-icon star-icon">
+      <svg class="star-icon" version="1.1" width="106px" height="103px" viewBox="0 0 105.602 102.931">
+        <!-- star outline svg -->
+        <path class="main-star" fill="none" stroke="#ffffff" stroke-width="6" stroke-miterlimit="10"
+          d="M52.35,3.11c0.475-0.963,1.253-0.963,1.728,0 l12.211,24.742c0.475,0.963,1.734,1.877,2.796,2.032l27.305,3.968c1.063,0.154,1.303,0.894,0.534,1.644L77.167,54.754c-0.769,0.75-1.25,2.229-1.068,3.287l4.664,27.194c0.182,1.058-0.448,1.516-1.398,1.016L54.942,73.413c-0.951-0.5-2.506-0.5-3.456,0L27.064,86.252c-0.951,0.5-1.58,0.043-1.398-1.016l4.664-27.194c0.182-1.058-0.299-2.538-1.068-3.287L9.504,35.495c-0.769-0.75-0.529-1.489,0.534-1.644l27.305-3.968c1.063-0.154,2.321-1.069,2.796-2.032L52.35,3.11z" />
+        <!-- svg line to animate -->
+        <path class="star-dashes" fill="#ffffff" stroke="#ffffff" stroke-width="5" stroke-linecap="round"
+          stroke-miterlimit="10"
+          d="M20.881,6.26l6.333,7.333 M103.214,63.961l-9.173-3.122 M78.519,13.835l5.724-7.818 M52.777,100.544l0.048-9.69 M11.823,61.737l-9.436,2.204" />
+      </svg>
+    </a>
+  </div>
+  <script>
+    const starIcon = document.querySelector('.star-icon');
+    starIcon.addEventListener('click', function (event) {
+      event.preventDefault();
+      this.classList.toggle("active");
+    }, false);
+  </script>
+</body>
+
+</html>
